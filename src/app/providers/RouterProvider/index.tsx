@@ -8,4 +8,5 @@ const RouterProvider: React.FC<RouterProviderProps> = ({ children }) => {
   return <BrowserRouter>{children}</BrowserRouter>;
 };
 
+
 export default RouterProvider;
