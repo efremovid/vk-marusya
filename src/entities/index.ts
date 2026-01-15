@@ -1,7 +1,10 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
 
-const rootReducer = combineReducers({});
+const rootReducer = combineReducers({
+
+  
+});
 
 export const store = configureStore({
   reducer: rootReducer,
