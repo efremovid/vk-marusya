@@ -5,7 +5,7 @@ import styles from './styles.module.scss'
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children?: ReactNode
   theme: 'primary' | 'disabled' 
-  widthVariant:  'default' | 'full' 
+  widthVariant?:  'default' | 'full' | 'icon'
 }
 
 export const Button = ({

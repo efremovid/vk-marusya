@@ -3,7 +3,7 @@ import { BaseInput } from "../../shared/ui/BaseInput/BaseInput";
 import styles from "./styles.module.scss";
 import { Link } from "react-router-dom";
 import type { IModalData } from "../../shared/types";
-// import type { IModalData } from "../../shared/types/modal";
+
 
 interface ModalProps {
   data: IModalData;

@@ -1,11 +1,14 @@
 .container {
-  padding: 0px 80px;
+  padding: 0px 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .films {
   display: grid;
   inline-size: 100%;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 30px;
 }
 

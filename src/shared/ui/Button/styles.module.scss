@@ -1,25 +1,16 @@
 .common {
-    text-align: center;
-    padding: 16px 48px;
-    border: transparent;
-    border-radius: 28px;
-}
-
-.default {
-    inline-size: 183px;
-}
-
-.full {
-    inline-size: 318px;
+  text-align: center;
+  padding: 6px 25px;
+  border: transparent;
+  border-radius: 28px;
 }
 
 .primary {
-    background-color: #bebebe;
-    color: #393939;
+  background-color: #bebebe;
+  color: #393939;
 }
 
 .disabled {
-background: #747474;
-color: #cbcbcb80;
-
+  background: #747474;
+  color: #cbcbcb80;
 }

@@ -1,50 +1,50 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Modal from "../../widgets/Modal";
-import type { IModalData } from "../../shared/types";
-import IconInputSvg from "../../shared/icons/IconInput.svg";
-import IconPassword from "../../shared/icons/IconPassword.svg";
+import { data } from "./data";
+
 import Cards from "../../widgets/Cards";
+import { getRandomFilm } from "./api";
+import FilmInfo from "../../widgets/FilmInfo";
+import type { FilmData } from "../../shared/types/filmData";
 
 const Home = () => {
   const [isShowModal, setIsShowModal] = useState(false);
+  const [changeFilm, setIsChangeFilm] = useState(false)
+  const [randomFilm, setRandomFilm] = useState<FilmData | null>(null);
 
   const handleClick = () => {
     setIsShowModal(!isShowModal);
   };
 
-    const handleCloseModal = () => {
-    setIsShowModal(false); 
+  const handleCloseModal = () => {
+    setIsShowModal(false);
   };
 
-  const data: IModalData = {
-    formTitle: "вход",
-    formFields: [
-      {
-        icon: IconInputSvg,
-        required: true,
-        type: "text",
-        isError: false,
-        placeholder: "Электронная почта",
-      },
-      {
-        icon: IconPassword,
-        required: true,
-        type: "password",
-        isError: false,
-        placeholder: "Введите пароль",
-      },
-    ],
-    buttonText: "Войти",
-    buttonAction: () => {},
-    linkText: "Регистрация",
-    linkRef: "/",
-  };
+  const handleChangeClick = () => {
+    setIsChangeFilm(!changeFilm)
+  }
+
+  useEffect(() => {
+    getRandomFilm().then((data: FilmData) => setRandomFilm(data));
+  }, [changeFilm]);
 
   return (
     <div>
       <button onClick={handleClick}>ВОЙТИ</button>
-      {isShowModal && <Modal data={data} onClose={handleCloseModal }/>}
-      <Cards/>
+      {isShowModal && <Modal data={data} onClose={handleCloseModal} />}
+      {randomFilm && (
+        <FilmInfo
+          rating={randomFilm.tmdbRating}
+          year={randomFilm.releaseYear}
+          runTime={randomFilm.runtime}
+          genre={randomFilm.genres[0]}
+          title={randomFilm.title}
+          subTitle={randomFilm.plot}
+          imgUrl={randomFilm.backdropUrl}
+          handleChangeClick={handleChangeClick}
+        />
+      )}
+      <Cards />
     </div>
   );
 };
