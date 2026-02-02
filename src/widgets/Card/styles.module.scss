@@ -1,0 +1,21 @@
+.image {
+  inline-size: 100%;
+  border-radius: 15px;
+}
+
+.container {
+  position: relative;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 40px;
+  block-size: 40px;
+  position: absolute;
+  border-radius: 10px;
+  left: -15px;
+  top: -15px;
+  background: rgb(247, 216, 115);
+}
