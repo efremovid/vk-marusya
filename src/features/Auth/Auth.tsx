@@ -3,6 +3,7 @@ import { BaseInput } from "../../shared/ui/BaseInput/BaseInput";
 import styles from "./styles.module.scss";
 import IconInputSvg from "../../shared/icons/IconInput.svg";
 import IconPassword from "../../shared/icons/IconPassword.svg";
+import { Link } from "react-router-dom";
 
 const Auth = () => {
   return (
@@ -13,7 +14,7 @@ const Auth = () => {
       <Button theme="primary" widthVariant="full">
         Войти
       </Button>
-      <p>регистрация</p>
+      <Link to={'auth/registration'}>регистрация</Link>
     </div>
   );
 };

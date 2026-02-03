@@ -4,6 +4,7 @@ import styles from "./styles.module.scss";
 import IconInputSvg from "../../shared/icons/IconInput.svg";
 import IconPassword from "../../shared/icons/IconPassword.svg";
 import IconUser from '../../shared/icons/IconUser.svg'
+import { Link } from "react-router-dom";
 
 const Registration = () => {
   return (
@@ -17,7 +18,7 @@ const Registration = () => {
       <Button theme="primary" widthVariant="full">
         Зарегистрироваться
       </Button>
-      <p>У меня есть учётная запись</p>
+      <Link to={}>Есть учётка? Войди!</Link>
     </div>
   );
 };

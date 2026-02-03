@@ -6,6 +6,7 @@ import Cards from "../../widgets/Cards";
 import { getRandomFilm } from "./api";
 import FilmInfo from "../../widgets/FilmInfo";
 import type { FilmData } from "../../shared/types/filmData";
+import Auth from "../../features/Auth/Auth";
 
 const Home = () => {
   const [isShowModal, setIsShowModal] = useState(false);
@@ -31,7 +32,13 @@ const Home = () => {
   return (
     <div>
       <button onClick={handleClick}>ВОЙТИ</button>
-      {isShowModal && <Modal data={data} onClose={handleCloseModal} />}
+      {isShowModal &&  
+      
+      <Modal onClose={handleCloseModal}>
+  
+      </Modal>
+      
+      }
       {randomFilm && (
         <FilmInfo
           rating={randomFilm.tmdbRating}

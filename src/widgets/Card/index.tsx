@@ -6,6 +6,7 @@ interface CardProps {
   imgLink: string;
   index?: number;
   alt?: string;
+  size?: 'md' | 'lg'
   genre?: string;
 }
 
@@ -31,6 +32,7 @@ const Card = ({ typeOfCard, imgLink, index, alt }: CardProps) => {
           src={imgLink === null ? posterNone : imgLink}
           alt={alt}
         />
+
       </div>
     );
   }

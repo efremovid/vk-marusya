@@ -1,28 +1,17 @@
-.container {
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 20px;
-  position: fixed; /* Закрепляем модалку относительно экрана */
-  top: 50%; /* Центрируем по вертикали */
-  left: 50%; /* Центрируем по горизонтали */
-  transform: translate(
-    -50%,
-    -50%
-  ); /* Подтягиваем на 50% своей ширины и высоты для центровки */
-  background-color: white; /* Белый фон для модалки */
-  border-radius: 8px; /* Округление углов для модалки */
-  padding: 20px; /* Отступы внутри модалки */
-  z-index: 1000; /* Модалка будет поверх остальных элементов */
-  width: 400px; /* Можно подстроить ширину под свой дизайн */
+  justify-content: center;
+  z-index: 1000;
 }
 
-.overlay {
-  position: fixed; /* Закрепляем затемнение поверх всего контента */
-  top: 0;
-  left: 0;
-  width: 100%; /* Покрывает весь экран */
-  height: 100%; /* Покрывает весь экран */
-  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
-  z-index: 999; /* Ниже модалки, но выше остальных элементов */
+.modal {
+  background: #fff;
+  border-radius: 12px;
+  padding: 32px;
+  min-width: 320px;
+  max-width: 420px;
 }
