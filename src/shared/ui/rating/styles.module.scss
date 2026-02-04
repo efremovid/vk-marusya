@@ -1,9 +1,11 @@
 .container {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  inline-size: 80px;
   gap: 10px;
-  padding: 5px;
-  border-radius: 10px;
-  background-color: #308e21;
+  padding: 7px;
+  border-radius: 15px;
   color: white;
 }
 

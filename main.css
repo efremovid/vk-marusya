@@ -117,3 +117,14 @@ h2 {
 h3 {
   font-size: 20px;
 }
+
+body {
+  background: linear-gradient(
+    180deg,
+    #191d30 0%,
+    #282f4e 100% 
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}

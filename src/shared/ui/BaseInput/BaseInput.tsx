@@ -12,6 +12,7 @@ export const BaseInput = ({
   isError,
   type = "text",
   defaultValue,
+  value,
   required = false,
   onChange,
   onBlur,
@@ -37,6 +38,7 @@ export const BaseInput = ({
         aria-required={required}
         onChange={onChange}
         onBlur={onBlur}
+        value={value}
       />
     </div>
   );

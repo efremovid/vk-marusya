@@ -7,6 +7,7 @@ import type { FilmData } from "../../shared/types/filmData";
 import Cards from "../../widgets/Cards";
 import Registration from "../../features/Registration";
 import Auth from "../../features/Auth/Auth";
+import Header from "../../widgets/Header";
 
 const Home = () => {
   const [isShowModal, setIsShowModal] = useState(false);
@@ -23,9 +24,14 @@ const Home = () => {
     getRandomFilm().then((data: FilmData) => setRandomFilm(data));
   }, [changeFilm]);
 
+  console.log(randomFilm);
+
   return (
     <div>
-      <button onClick={handleClick}>ВОЙТИ</button>
+      <Header>
+        <button onClick={handleClick}>ВОЙТИ</button>
+      </Header>
+
       {isShowModal && (
         <Modal onClose={handleCloseModal}>
           {isAuth ? (

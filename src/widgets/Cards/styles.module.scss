@@ -1,5 +1,6 @@
 .container {
-  padding: 0px 200px;
+   padding-left: clamp(1.25rem, 0.4878rem + 3.7523vw, 5rem);
+  padding-right: clamp(1.25rem, 0.4878rem + 3.7523vw, 5rem);
   display: flex;
   flex-direction: column;
   gap: 20px;

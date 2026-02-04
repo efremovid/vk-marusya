@@ -1,7 +1,9 @@
 .container {
   display: flex;
   gap: 30px;
-  padding: 0px 200px;
+  padding-left: clamp(1.25rem, 0.4878rem + 3.7523vw, 5rem);
+  padding-right: clamp(1.25rem, 0.4878rem + 3.7523vw, 5rem);
+  min-height: 400px;
 }
 
 .image {
@@ -13,7 +15,6 @@
 .info {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   gap: 20px;
 }
 
@@ -26,4 +27,19 @@
 .buttons {
   display: flex;
   gap: 10px;
+}
+
+.subTitle {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (width < 805px) {
+.container {
+  flex-direction: column;
+}
+
 }
