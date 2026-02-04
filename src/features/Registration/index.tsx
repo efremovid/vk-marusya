@@ -1,12 +1,15 @@
-import { Button } from "../../shared/ui/Button/index";
+import { Button } from "../../shared/ui/Button";
 import { BaseInput } from "../../shared/ui/BaseInput/BaseInput";
 import styles from "./styles.module.scss";
 import IconInputSvg from "../../shared/icons/IconInput.svg";
 import IconPassword from "../../shared/icons/IconPassword.svg";
-import IconUser from '../../shared/icons/IconUser.svg'
-import { Link } from "react-router-dom";
+import IconUser from '../../shared/icons/IconUser.svg';
 
-const Registration = () => {
+interface RegistrationProps {
+  handleChangeAuth: () => void
+}
+
+const Registration = ({handleChangeAuth}: RegistrationProps) => {
   return (
     <div className={styles.container}>
       <h2>МАРУСЯ</h2>
@@ -18,7 +21,7 @@ const Registration = () => {
       <Button theme="primary" widthVariant="full">
         Зарегистрироваться
       </Button>
-      <Link to={}>Есть учётка? Войди!</Link>
+      <button onClick={handleChangeAuth}>Есть учётка? Войди в аккаунт!</button>
     </div>
   );
 };

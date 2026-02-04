@@ -1,11 +1,15 @@
-import { Button } from "../../shared/ui/Button/index";
+import { Button } from "../../shared/ui/Button";
 import { BaseInput } from "../../shared/ui/BaseInput/BaseInput";
 import styles from "./styles.module.scss";
 import IconInputSvg from "../../shared/icons/IconInput.svg";
 import IconPassword from "../../shared/icons/IconPassword.svg";
-import { Link } from "react-router-dom";
 
-const Auth = () => {
+
+interface AuthProps {
+  handleChangeAuth: () => void
+}
+
+const Auth = ({handleChangeAuth}: AuthProps) => {
   return (
     <div className={styles.container}>
       <h2>МАРУСЯ</h2>
@@ -14,7 +18,7 @@ const Auth = () => {
       <Button theme="primary" widthVariant="full">
         Войти
       </Button>
-      <Link to={'auth/registration'}>регистрация</Link>
+      <button onClick={handleChangeAuth}>регистрация</button>
     </div>
   );
 };

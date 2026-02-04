@@ -117,17 +117,3 @@ h2 {
 h3 {
   font-size: 20px;
 }
-
-body {
-  background: linear-gradient(
-
-    #f8f5f2 0%,
-    #f0ece6 15%,
-    #e8e2da 30%,
-    #e0d8ce 45%,
-    #d8cec2 60%,
-    #d0c4b6 75%,
-    #c8baac 90%,
-    #c0b0a0 100%
-  );
-}
