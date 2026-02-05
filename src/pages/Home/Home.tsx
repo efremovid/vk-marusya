@@ -8,6 +8,8 @@ import Cards from "../../widgets/Cards";
 import Registration from "../../features/Registration";
 import Auth from "../../features/Auth/Auth";
 import Header from "../../widgets/Header";
+import { Button } from "../../shared/ui/Button";
+import Search from "../../widgets/Search";
 
 const Home = () => {
   const [isShowModal, setIsShowModal] = useState(false);
@@ -29,7 +31,9 @@ const Home = () => {
   return (
     <div>
       <Header>
-        <button onClick={handleClick}>ВОЙТИ</button>
+        <Button theme="primary" onClick={handleClick}>ВОЙТИ</Button>
+        
+        <Search />
       </Header>
 
       {isShowModal && (
