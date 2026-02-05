@@ -5,8 +5,5 @@ export interface FilmData {
   runtime: number;
   title: string;
   plot: string;
-backdropUrl: string;
+  backdropUrl: string;
 }
-
-
-      

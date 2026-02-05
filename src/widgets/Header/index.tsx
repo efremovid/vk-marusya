@@ -3,6 +3,7 @@ import styles from './styles.module.scss'
 
 interface HeaderProps {
   children: ReactNode;
+  
 }
 
 const Header = ({ children }: HeaderProps) => {

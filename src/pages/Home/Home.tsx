@@ -7,19 +7,19 @@ import type { FilmData } from "../../shared/types/filmData";
 import Cards from "../../widgets/Cards";
 import Registration from "../../features/Registration";
 import Auth from "../../features/Auth/Auth";
-import Header from "../../widgets/Header";
-import { Button } from "../../shared/ui/Button";
-import Search from "../../widgets/Search";
 
-const Home = () => {
-  const [isShowModal, setIsShowModal] = useState(false);
+interface HomeProps {
+  isShowModal: boolean;
+  handleCloseModal: () => void;
+}
+
+const Home = ({ handleCloseModal, isShowModal }: HomeProps) => {
   const [randomFilm, setRandomFilm] = useState<FilmData | null>(null);
   const [changeFilm, setChangeFilm] = useState(false);
   const [isAuth, setIsAuth] = useState(true);
 
-  const handleClick = () => setIsShowModal(!isShowModal);
   const handleChangeClick = () => setChangeFilm(!changeFilm);
-  const handleCloseModal = () => setIsShowModal(false);
+
   const handleChangeAuth = () => setIsAuth(!isAuth);
 
   useEffect(() => {
@@ -30,12 +30,6 @@ const Home = () => {
 
   return (
     <div>
-      <Header>
-        <Button theme="primary" onClick={handleClick}>ВОЙТИ</Button>
-        
-        <Search />
-      </Header>
-
       {isShowModal && (
         <Modal onClose={handleCloseModal}>
           {isAuth ? (
