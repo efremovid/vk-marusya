@@ -1,0 +1,22 @@
+.filmInfo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.image {
+    inline-size: 80px;
+    border-radius: 5px;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+.container_item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+

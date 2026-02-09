@@ -4,6 +4,7 @@ import { BaseInput } from "../../shared/ui/BaseInput/BaseInput";
 import { Button } from "../../shared/ui/Button";
 import styles from "./styles.module.scss";
 import type { FilmData } from "../../shared/types/filmData";
+import SearchResult from "../SearchResult";
 
 const Search = () => {
   const [searchTitle, setSearchTitle] = useState("");
@@ -52,16 +53,19 @@ const Search = () => {
   }, [data]);
 
   return (
-    <div className={styles.container}>
-      <BaseInput
-        value={searchTitle}
-        onChange={onChangeHandler}
-        placeholder="Введите запрос"
-      />
+    <div>
+      <div className={styles.container}>
+        <BaseInput
+          value={searchTitle}
+          onChange={onChangeHandler}
+          placeholder="Введите запрос"
+        />
 
-      <Button theme="primary" disabled={isLoading}>
-        {isLoading ? "Поиск..." : "Поиск"}
-      </Button>
+        <Button theme="primary" disabled={isLoading}>
+          {isLoading ? "Поиск..." : "Поиск"}
+        </Button>
+      </div>
+      {data.length > 0 && <SearchResult data={data} isLoading={isLoading} />}
     </div>
   );
 };
