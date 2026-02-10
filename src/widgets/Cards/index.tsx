@@ -23,7 +23,7 @@ const Cards = () => {
           data.map((film, index) => (
             <Card
               key={film.id}
-              typeOfCard="film"
+   
               imgLink={film.posterUrl}
               index={index + 1}
             />

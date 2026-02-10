@@ -6,4 +6,5 @@ export interface FilmData {
   title: string;
   plot: string;
   backdropUrl: string;
+  posterUrl: string
 }

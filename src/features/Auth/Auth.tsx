@@ -3,13 +3,9 @@ import { BaseInput } from "../../shared/ui/BaseInput/BaseInput";
 import styles from "./styles.module.scss";
 import IconInputSvg from "../../shared/icons/IconInput.svg";
 import IconPassword from "../../shared/icons/IconPassword.svg";
+import { Link } from "react-router-dom";
 
-
-interface AuthProps {
-  handleChangeAuth: () => void
-}
-
-const Auth = ({handleChangeAuth}: AuthProps) => {
+const Auth = () => {
   return (
     <div className={styles.container}>
       <h2>МАРУСЯ</h2>
@@ -18,7 +14,7 @@ const Auth = ({handleChangeAuth}: AuthProps) => {
       <Button theme="primary" widthVariant="full">
         Войти
       </Button>
-      <button onClick={handleChangeAuth}>регистрация</button>
+      <Link to="/auth/register">регистрация</Link>
     </div>
   );
 };

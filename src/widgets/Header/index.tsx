@@ -3,8 +3,6 @@ import styles from "./styles.module.scss";
 
 interface HeaderProps {
   children: ReactNode;
-  handleCloseModal: () => void;
-  isShowModal: boolean
 }
 
 const Header = ({ children }: HeaderProps) => {

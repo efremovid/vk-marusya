@@ -1,0 +1,14 @@
+.container {
+   padding-left: clamp(1.25rem, 0.4878rem + 3.7523vw, 5rem);
+  padding-right: clamp(1.25rem, 0.4878rem + 3.7523vw, 5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.films {
+  display: grid;
+  inline-size: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 30px;
+}
