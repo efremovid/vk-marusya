@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getGenres } from "./api/api";
+import { Link } from "react-router-dom";
 
 const GenresPage = () => {
   const [genres, setGenres] = useState([]);
@@ -13,7 +14,7 @@ const GenresPage = () => {
   return (
     <div>
       {genres.map((genre) => (
-        <p>{genre}</p>
+        <Link to={`/movie?genre=${genre}`}>{genre}</Link>
       ))}
     </div>
   );

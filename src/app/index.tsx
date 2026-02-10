@@ -8,16 +8,18 @@ import RouterProvider from "./providers/RouterProvider";
 import Modal from "../widgets/Modal";
 import Auth from "../features/Auth/Auth";
 import Registration from "../features/Registration";
-import GenresPage from "../pages/GenresPage";
+import { NavLink } from "react-router-dom";
 
 const App = () => {
   const [isShowModal, setIsShowModal] = useState(false);
   const [isAuth, setIsAuth] = useState(true);
-  const [sectionNmae, setSectionName] = useState("main");
+  
 
   const handleCloseModal = () => setIsShowModal(false);
   const handleClick = () => setIsShowModal(!isShowModal);
   const handleChangeAuth = () => setIsAuth(!isAuth);
+
+
 
   return (
     <div className="content">
@@ -27,20 +29,10 @@ const App = () => {
             <Button theme="primary" onClick={handleClick}>
               ВОЙТИ
             </Button>
-            <Button
-              theme="menu"
-              onClick={() => setSectionName("main")}
-              isActive={sectionNmae === "main"}
-            >
+            <NavLink to={"/"} end>
               Главная
-            </Button>
-            <Button
-              theme="menu"
-              onClick={() => setSectionName("genres")}
-              isActive={sectionNmae === "genres"}
-            >
-              Жанры
-            </Button>
+            </NavLink>
+            <NavLink to={"/genres"}>Жанры</NavLink>
             <Search />
             {isShowModal && (
               <Modal onClose={handleCloseModal}>
@@ -52,8 +44,9 @@ const App = () => {
               </Modal>
             )}
           </Header>
+          <Navigation />
 
-          {sectionNmae === "main" ? <Navigation /> : <GenresPage />}
+          {/* {sectionNmae === "main" ?  : <GenresPage />} */}
         </RouterProvider>
       </ReduxProvider>
     </div>
