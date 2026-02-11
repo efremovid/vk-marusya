@@ -3,3 +3,17 @@
   display: flex;
   gap: 30px;
 }
+
+.links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.text {
+  color: white;
+
+  &.active {
+    border-bottom: 1px solid;
+  }
+}

@@ -5,8 +5,6 @@ import IconInputSvg from "../../shared/icons/IconInput.svg";
 import IconPassword from "../../shared/icons/IconPassword.svg";
 import IconUser from "../../shared/icons/IconUser.svg";
 import { useState } from "react";
-import { Link } from "react-router-dom";
-
 
 interface RegistrationFormData {
   email: string;
@@ -15,7 +13,11 @@ interface RegistrationFormData {
   password: string;
 }
 
-const Registration = () => {
+interface RegistrationProps {
+  handleShowRegModal?: () => void;
+}
+
+const Registration = ({ handleShowRegModal }: RegistrationProps) => {
   const [userData, setUserData] = useState({
     email: "",
     name: "",
@@ -107,10 +109,16 @@ const Registration = () => {
         onClick={() => handleClick(userData)}
         theme="primary"
         widthVariant="full"
+        text="Зарегистрироваться"
       >
         Зарегистрироваться
       </Button>
-      <Link to="/auth/login">Есть учётка? Войди</Link>
+      <Button
+        onClick={handleShowRegModal}
+        theme="link"
+        widthVariant="full"
+        text="Есть учётка? Заходи!"
+      />
     </div>
   );
 };

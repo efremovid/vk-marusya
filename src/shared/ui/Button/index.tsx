@@ -4,14 +4,16 @@ import styles from "./styles.module.scss";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children?: ReactNode;
-  theme: "primary" | "disabled" | 'menu';
-  widthVariant?: "default" | "full" | "icon";
+  text?: string;
+  theme: "primary" | "disabled" | "menu" | "link";
+  widthVariant?: "default" | "full" | "icon" | 'small';
   isActive?: boolean;
 }
 
 export const Button = ({
   children,
   theme,
+  text,
   isActive,
   className,
   widthVariant = "default",
@@ -19,7 +21,6 @@ export const Button = ({
 }: ButtonProps) => {
   return (
     <button
-
       className={cn(
         styles.common,
         styles[theme],
@@ -29,7 +30,7 @@ export const Button = ({
       )}
       {...props}
     >
-      {children}
+      {text || children}
     </button>
   );
 };

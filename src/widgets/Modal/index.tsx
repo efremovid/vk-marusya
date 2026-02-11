@@ -4,6 +4,7 @@ import styles from "./styles.module.scss";
 interface ModalProps {
   onClose?: () => void;
   children?: ReactNode;
+  handleShowRegModal?: () => void
 }
 
 const Modal = ({ onClose, children }: ModalProps) => {

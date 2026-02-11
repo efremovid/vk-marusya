@@ -8,10 +8,13 @@ interface SearchResultProps {
 }
 
 const SearchResult = ({ data, isLoading }: SearchResultProps) => {
-  return <ul className={styles.container}>
-{data.map((film) => <FilmInfo film={film}/> )}
-
-  </ul>;
+  return (
+    <ul className={styles.container}>
+      {data.map((film) => (
+        <FilmInfo key={film.title} film={film} />
+      ))}
+    </ul>
+  );
 };
 
 export default SearchResult;

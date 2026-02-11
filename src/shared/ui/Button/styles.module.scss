@@ -3,17 +3,28 @@
   text-align: center;
   padding: 10px;
   border: transparent;
-  border-radius: 25px;
+  border-radius: 8px;
+  color: black;
 }
 
 .primary {
-  background-color: #bebebe;
+  inline-size: 100%;
+  background-color: #d9ebed;
   color: #393939;
 }
 
 .disabled {
   background: #747474;
   color: #cbcbcb80;
+}
+
+.link {
+inline-size: 100%;
+color: black;
+}
+
+.small {
+  inline-size: max-content;
 }
 
 .isActive {

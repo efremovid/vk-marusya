@@ -13,6 +13,10 @@
   border-radius: 15px;
 }
 
+.icon {
+  color: black;
+}
+
 .info {
   display: flex;
   flex-direction: column;
@@ -39,8 +43,7 @@
 }
 
 @media (width < 805px) {
-.container {
-  flex-direction: column;
-}
-
+  .container {
+    flex-direction: column;
+  }
 }
