@@ -5,6 +5,9 @@ import MoviesPages from "../../pages/MoviesPages/MoviesPages";
 import MainFilm from "../../widgets/MainFim";
 
 const Navigation = () => {
+
+
+  
   return (
     <Routes>
       <Route index element={<Home />} />

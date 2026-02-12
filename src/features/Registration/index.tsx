@@ -11,6 +11,7 @@ interface RegistrationFormData {
   name: string;
   surname: string;
   password: string;
+  passwordDouble: string;
 }
 
 interface RegistrationProps {
@@ -18,7 +19,7 @@ interface RegistrationProps {
 }
 
 const Registration = ({ handleShowRegModal }: RegistrationProps) => {
-  const [userData, setUserData] = useState({
+  const [userData, setUserData] = useState<RegistrationFormData>({
     email: "",
     name: "",
     surname: "",
@@ -26,22 +27,24 @@ const Registration = ({ handleShowRegModal }: RegistrationProps) => {
     passwordDouble: "",
   });
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
   };
 
-  const handleClick = async (data: RegistrationFormData) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     try {
       const response = await fetch("https://cinemaguide.skillbox.cc/user", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
+        credentials: "include",
         body: JSON.stringify({
-          email: data.email,
-          name: data.name,
-          surname: data.surname,
-          password: data.password,
+          email: userData.email,
+          name: userData.name,
+          surname: userData.surname,
+          password: userData.password,
         }),
       });
 
@@ -66,7 +69,7 @@ const Registration = ({ handleShowRegModal }: RegistrationProps) => {
   console.log(userData);
 
   return (
-    <div className={styles.container}>
+    <form onSubmit={handleSubmit} className={styles.container}>
       <h2>МАРУСЯ</h2>
       <BaseInput
         value={userData.email}
@@ -106,7 +109,7 @@ const Registration = ({ handleShowRegModal }: RegistrationProps) => {
         type="password"
       />
       <Button
-        onClick={() => handleClick(userData)}
+        type="submit"
         theme="primary"
         widthVariant="full"
         text="Зарегистрироваться"
@@ -119,7 +122,7 @@ const Registration = ({ handleShowRegModal }: RegistrationProps) => {
         widthVariant="full"
         text="Есть учётка? Заходи!"
       />
-    </div>
+    </form>
   );
 };
 
