@@ -1,5 +1,5 @@
 import styles from "./styles.module.scss";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Search from "../Search";
 import { useState } from "react";
 import { Button } from "../../shared/ui/Button";

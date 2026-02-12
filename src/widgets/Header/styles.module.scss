@@ -17,3 +17,16 @@
     border-bottom: 1px solid;
   }
 }
+
+@media (width < 530px) {
+  .container {
+    gap: 15px;
+    justify-content: space-between;
+  }
+  .links {
+    gap: 5px;
+  }
+  .links {
+    flex-direction: column;
+  }
+}

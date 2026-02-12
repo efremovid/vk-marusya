@@ -12,6 +12,9 @@
 .container {
     display: flex;
     gap: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .container_item {
@@ -20,3 +23,6 @@
     gap: 5px;
 }
 
+.container:hover {
+    background-color: rgb(129, 129, 129);
+}

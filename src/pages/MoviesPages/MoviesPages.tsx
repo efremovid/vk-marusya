@@ -30,7 +30,7 @@ const MoviesPages = () => {
       <h3>Показаны фильмы по жанру: {query}</h3>
       <div className={styles.films}>
         {films.map((film) => (
-          <Card imgLink={film.posterUrl} alt={film.title} />
+          <Card imgLink={film.posterUrl} alt={film.title} id={film.id} />
         ))}
       </div>
     </div>

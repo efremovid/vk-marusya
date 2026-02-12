@@ -4,11 +4,11 @@
   gap: 30px;
   padding-left: clamp(1.25rem, 0.4878rem + 3.7523vw, 5rem);
   padding-right: clamp(1.25rem, 0.4878rem + 3.7523vw, 5rem);
-  min-height: 400px;
+  max-inline-size: 1000px;
 }
 
 .image {
-  max-inline-size: 400px;
+  max-inline-size: 300px;
   object-fit: cover;
   border-radius: 15px;
 }

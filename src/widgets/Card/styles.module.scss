@@ -1,6 +1,6 @@
 .container {
   position: relative;
-  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0px 15px rgba(255, 255, 255, 0.8);
   border-radius: 15px;
 }
 
@@ -22,4 +22,10 @@
   left: -10px;
   top: -10px;
   background: rgb(185, 184, 178);
+}
+
+.name {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
 }

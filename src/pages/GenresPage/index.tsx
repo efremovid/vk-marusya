@@ -10,6 +10,8 @@ const GenresPage = () => {
     getGenres().then((data) => setGenres(data));
   }, []);
 
+  console.log(genres)
+
   return (
     <div className={styles.container}>
       <h3>Жанры</h3>

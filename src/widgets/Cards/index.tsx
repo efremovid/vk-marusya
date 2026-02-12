@@ -21,12 +21,7 @@ const Cards = () => {
       <div className={styles.films}>
         {data.length > 0 ? (
           data.map((film, index) => (
-            <Card
-              key={film.id}
-   
-              imgLink={film.posterUrl}
-              index={index + 1}
-            />
+            <Card key={film.id} imgLink={film.posterUrl} index={index + 1} id={film.id}/>
           ))
         ) : (
           <p>Loading...</p>

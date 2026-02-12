@@ -7,7 +7,7 @@ interface SearchResultProps {
   isLoading: boolean;
 }
 
-const SearchResult = ({ data, isLoading }: SearchResultProps) => {
+const SearchResult = ({ data}: SearchResultProps) => {
   return (
     <ul className={styles.container}>
       {data.map((film) => (

@@ -1,4 +1,5 @@
 export interface FilmData {
+  id: number;
   tmdbRating?: number;
   releaseYear?: number;
   genres: string;
@@ -6,5 +7,5 @@ export interface FilmData {
   title: string;
   plot: string;
   backdropUrl: string;
-  posterUrl: string
+  posterUrl: string;
 }
