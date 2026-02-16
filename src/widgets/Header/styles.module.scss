@@ -1,7 +1,9 @@
 .container {
   padding: 20px;
-  display: flex;
-  gap: 30px;
+ display: grid;
+ gap: 30px;
+ grid-template-columns:  max-content  max-content 1fr auto;
+ align-items: center;
 }
 
 .links {
@@ -16,6 +18,19 @@
   &.active {
     border-bottom: 1px solid;
   }
+}
+
+.profile {
+  inline-size: 60px;
+  block-size: 60px;
+  padding: 5px;
+  border-radius: 50%;
+  color: black;
+  background: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (width < 530px) {

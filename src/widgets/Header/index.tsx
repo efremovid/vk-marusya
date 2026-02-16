@@ -1,15 +1,29 @@
 import styles from "./styles.module.scss";
 import { NavLink } from "react-router-dom";
 import Search from "../Search";
-import { useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { Button } from "../../shared/ui/Button";
 import Auth from "../../features/Auth/Auth";
 import Modal from "../Modal";
 import Registration from "../../features/Registration";
+import { useSelector } from "react-redux";
+import {
+  selectIsAuth,
+  selectUserData,
+} from "../../entities/user/user-selectors";
+import Logo from "../../shared/ui/Logo";
 
 const Header = () => {
   const [isShowAuthModal, setIsShowAuthModal] = useState(false);
   const [isShowRegModal, setIsShowRegModal] = useState(false);
+
+
+
+  const userData = useSelector(selectUserData);
+  const isAuth = useSelector(selectIsAuth);
+
+
+  console.log(isAuth);
 
   const handleSwowModal = () => {
     setIsShowAuthModal(!isShowAuthModal);
@@ -21,12 +35,7 @@ const Header = () => {
 
   return (
     <div className={styles.container}>
-      <Button
-        theme="primary"
-        widthVariant="small"
-        text="Вход"
-        onClick={handleSwowModal}
-      />
+      <Logo />
       <div className={styles.links}>
         <NavLink
           className={({ isActive }) =>
@@ -47,6 +56,19 @@ const Header = () => {
         </NavLink>
       </div>
       <Search />
+
+      {isAuth ? (
+        <NavLink className={`${styles.profile}`} to={""}>
+          {userData.name}
+        </NavLink>
+      ) : (
+        <Button
+          theme="primary"
+          widthVariant="small"
+          text="Вход"
+          onClick={handleSwowModal}
+        />
+      )}
 
       {isShowAuthModal && (
         <Modal

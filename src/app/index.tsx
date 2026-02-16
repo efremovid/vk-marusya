@@ -14,9 +14,9 @@ const App = () => {
           <RouterProvider>
             <Header />
             <Navigation />
-            <Footer />
           </RouterProvider>
         </AuthProvider>
+        <Footer />
       </ReduxProvider>
     </div>
   );

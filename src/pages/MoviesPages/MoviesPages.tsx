@@ -6,6 +6,8 @@ import { getMovies } from "./api";
 import Card from "../../widgets/Card";
 import type { FilmData } from "../../shared/types/filmData";
 import { Button } from "../../shared/ui/Button";
+import { useSelector } from "react-redux";
+import { selectIsAuth } from "../../entities/user/user-selectors";
 
 const MoviesPages = () => {
   const [films, setFilms] = useState<FilmData[]>([]);

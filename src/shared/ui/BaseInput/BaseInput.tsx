@@ -20,7 +20,7 @@ export const BaseInput = ({
 }: BaseInputProps) => {
   return (
     <div className={styles.container}>
-      <img src={icon} alt="" />
+
       <input
         {...props}
         id={name}

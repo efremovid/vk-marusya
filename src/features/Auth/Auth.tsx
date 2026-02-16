@@ -71,7 +71,7 @@ const Auth = ({ handleShowRegModal }: AuthProps) => {
         placeholder="Пароль"
         type="password"
       />
-      <Button theme="primary" widthVariant="full" text="Войти" />
+      <Button theme="primary" widthVariant="full" text="Войти" type="submit"/>
       <Button theme="link" text="К регистрации!" onClick={handleShowRegModal} />
     </form>
   );
